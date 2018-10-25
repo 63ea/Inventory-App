@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:onClick="signOut"
+        android:layout_centerInParent="true"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="133dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#ffffff"
+        android:textSize="17.6sp"
+        android:textStyle="normal"
+        android:background="@color/b"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"
+        android:text="TextView" />
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c"
+    tools:context=".MainActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/toolbar"
+        ></include>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+        android:onClick="openLogin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="152dp"
+        android:text="LOGIN"
+        android:fontFamily="sans-serif-medium"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="272dp"
+        android:textColor="#ffffff"
+        android:textSize="17.6sp"
+        android:textStyle="normal"
+        android:background="@color/b" />
+
+    <Button
+        android:id="@+id/button2"
+        android:onClick="openRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="187dp"
+        android:text="SIGN UP"
+        android:fontFamily="sans-serif-medium"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="366dp"
+        android:textColor="#ffffff"
+        android:textSize="17.6sp"
+        android:textStyle="normal"
+        android:background="@color/b"/>
+    />
+</RelativeLayout>

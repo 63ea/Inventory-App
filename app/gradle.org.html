@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en-US" class="site-layout" itemscope itemtype="https://schema.org/WebPage">
+<head prefix="og: http://ogp.me/ns#
+                
+                website: http://ogp.me/ns/website#
+                ">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradle Build Tool</title>
+<script src="/cdn-cgi/apps/head/_irZJ9fz6qteJHtGS5xh6NJkKAc.js"></script><link crossorigin href="//assets.gradle.com" rel="preconnect">
+<style type="text/css">/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+    html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}</style>
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/index.css">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/icon/manifest.json">
+<link rel="mask-icon" href="/icon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/icon/favicon.ico">
+<meta name="description" content="Accelerate developer productivity. Gradle helps teams build, automate and deliver better software, faster.">
+<meta name="apple-mobile-web-app-title" content="Gradle Build Tool">
+<meta name="application-name" content="Gradle Build Tool">
+<meta name="msapplication-config" content="/icon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<meta name="google" content="nositelinkssearchbox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@gradle">
+<meta name="twitter:creator" content="@gradle">
+<meta name="twitter:title" content="Gradle Build Tool">
+<meta name="twitter:url" content="https://gradle.org/">
+<meta name="twitter:description" content="Accelerate developer productivity. Gradle helps teams build, automate and deliver better software, faster.">
+<meta name="twitter:image" content="https://gradle.org/images/gradle-256x256.png">
+<meta property="og:description" content="Accelerate developer productivity. Gradle helps teams build, automate and deliver better software, faster.">
+<meta property="og:image" content="https://gradle.org/images/gradle-256x256.png">
+<meta property="og:image:height" content="256">
+<meta property="og:image:secure_url" content="https://gradle.org/images/gradle-256x256.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="256">
+<meta property="og:site_name" content="Gradle">
+<meta property="fb:app_id" content="1986896958304057">
+<meta property="og:title" content="Gradle Build Tool">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gradle.org/">
+<script>
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,"script","https://www.google-analytics.com/analytics.js","ga");
+
+      
+          ga("create", "UA-4207603-1", "auto", "all", {
+            "allowLinker": true
+          });
+          ga("create", "UA-4207603-8", "auto", "root");
+          ga("all.set", "transport", "beacon");
+          ga("root.set", "transport", "beacon");
+
+          ga("all.require", "linker");
+          ga("all.linker:autoLink", ["gradle.com"], false, true);
+
+          ga("all.require", "maxScrollTracker", {
+            timeZone: "America/Los_Angeles",
+            maxScrollMetricIndex: 1
+          });
+
+          ga("root.require", "maxScrollTracker", {
+            timeZone: "America/Los_Angeles",
+            maxScrollMetricIndex: 1
+          });
+
+          
+          ga("all.send", "pageview");
+          ga("root.send", "pageview");
+          
+      
+    </script>
+<script src="/js/autotrack.js" async></script>
+<script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '371406826709657');
+      fbq('track', 'PageView');
+    </script>
+<noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=371406826709657&ev=PageView&noscript=1"
+    />
+    </noscript>
+<script type="text/javascript">
+      _linkedin_data_partner_id = "295769";
+      </script><script type="text/javascript">
+      (function(){var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript";b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);})();
+    </script>
+<noscript>
+    <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=295769&fmt=gif" />
+    </noscript>
+<script src="/js/event-tracker.js" defer></script>
+<script src="/js/events.js" defer></script>
+</head>
+<body class="site-layout__layout">
+<div class="notification" id="close-notification">
+<span class="notification__text">Maximize developer productivity with Gradle Enterprise. <a id="notification-link" href="https://gradle.org/training/developer-productivity-with-gradle-enterprise/">Register for the free online training course</a>.</span>
+<a id="notification-close" class="notification__close" href="#close-notification"><svg width="13" height="13" viewBox="0 0 13 13" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M12.082.94L.918 12.06M12.06 12.082L.94.918" stroke="#FFF" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+</div>
+<header class="site-layout__header site-header" itemscope itemtype="https://schema.org/WPHeader">
+<nav class="site-header__navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
+<div class="site-header__navigation-header">
+<a class="logo" href="https://gradle.org" title="Gradle Logo"><svg width="243" height="43" viewBox="0 0 243 43" xmlns="http://www.w3.org/2000/svg"><title>Gradle-Buildtool</title><g fill="none" fill-rule="evenodd"><path d="M46.876 7.888c-1.556-2.799-4.338-3.635-6.303-3.675-2.411-.048-4.392 1.287-4.017 2.164.08.188.532 1.17.81 1.576.402.586 1.12.136 1.373.002.752-.4 1.555-.53 2.467-.423.871.101 2.03.638 2.806 2.13 1.828 3.513-3.815 10.742-10.878 5.736-7.062-5.006-13.93-3.347-17.04-2.338-3.11 1.008-4.54 2.023-3.31 4.369 1.67 3.188 1.116 2.21 2.735 4.85 2.572 4.19 8.201-1.93 8.201-1.93-4.193 6.182-7.788 4.688-9.167 2.527-1.243-1.947-2.208-4.193-2.208-4.193-10.622 3.746-7.748 20.283-7.748 20.283h5.275c1.345-6.089 6.153-5.864 6.977 0h4.025c3.56-11.89 12.581 0 12.581 0h5.247c-1.47-8.11 2.951-10.659 5.737-15.413 2.786-4.755 5.426-10.571 2.437-15.665zm-13.533 15.66c-2.774-.906-1.781-3.666-1.781-3.666s2.422.783 5.699 1.852c-.189.856-1.819 2.498-3.918 1.813z" fill="#02303A" /><path d="M35.804 21.466c.083.764-.501 1.451-1.306 1.535-.804.083-1.523-.468-1.606-1.232-.082-.764.502-1.452 1.306-1.535.804-.084 1.523.468 1.606 1.232" fill="#00303A" /><path d="M72.236 22.3v7.02a9.197 9.197 0 0 1-2.814 1.422c-.996.3-2.062.45-3.198.45-1.416 0-2.698-.22-3.846-.66-1.148-.44-2.128-1.052-2.94-1.836a8.043 8.043 0 0 1-1.878-2.808c-.44-1.088-.66-2.276-.66-3.564 0-1.304.212-2.5.636-3.588a8.095 8.095 0 0 1 1.806-2.808c.78-.784 1.726-1.392 2.838-1.824 1.112-.432 2.36-.648 3.744-.648.704 0 1.362.056 1.974.168.612.112 1.18.266 1.704.462a7.38 7.38 0 0 1 1.434.714c.432.28.828.588 1.188.924l-.924 1.464c-.144.232-.332.374-.564.426-.232.052-.484-.006-.756-.174l-.792-.456a5.11 5.11 0 0 0-.882-.396 7.24 7.24 0 0 0-1.092-.276 8.04 8.04 0 0 0-1.398-.108c-.856 0-1.63.144-2.322.432-.692.288-1.282.7-1.77 1.236a5.571 5.571 0 0 0-1.128 1.932c-.264.752-.396 1.592-.396 2.52 0 .992.142 1.878.426 2.658.284.78.684 1.44 1.2 1.98.516.54 1.138.952 1.866 1.236.728.284 1.54.426 2.436.426.64 0 1.212-.068 1.716-.204.504-.136.996-.32 1.476-.552v-3.144h-2.184c-.208 0-.37-.058-.486-.174a.58.58 0 0 1-.174-.426V22.3h5.76zm5.268-1.476c.384-.736.84-1.314 1.368-1.734.528-.42 1.152-.63 1.872-.63.568 0 1.024.124 1.368.372l-.192 2.22c-.04.144-.098.246-.174.306a.48.48 0 0 1-.306.09c-.12 0-.298-.02-.534-.06a4.126 4.126 0 0 0-.69-.06c-.328 0-.62.048-.876.144a2.203 2.203 0 0 0-.69.414c-.204.18-.384.398-.54.654a6.381 6.381 0 0 0-.438.876V31h-2.964V18.688h1.74c.304 0 .516.054.636.162.12.108.2.302.24.582l.18 1.392zm12.504 4.92c-.856.04-1.576.114-2.16.222-.584.108-1.052.246-1.404.414-.352.168-.604.364-.756.588a1.277 1.277 0 0 0-.228.732c0 .52.154.892.462 1.116.308.224.71.336 1.206.336.608 0 1.134-.11 1.578-.33.444-.22.878-.554 1.302-1.002v-2.076zm-6.792-5.34c1.416-1.296 3.12-1.944 5.112-1.944.72 0 1.364.118 1.932.354a4.082 4.082 0 0 1 1.44.984c.392.42.69.922.894 1.506.204.584.306 1.224.306 1.92V31h-1.344c-.28 0-.496-.042-.648-.126-.152-.084-.272-.254-.36-.51l-.264-.888c-.312.28-.616.526-.912.738-.296.212-.604.39-.924.534-.32.144-.662.254-1.026.33a5.911 5.911 0 0 1-1.206.114c-.52 0-1-.07-1.44-.21-.44-.14-.82-.35-1.14-.63a2.828 2.828 0 0 1-.744-1.044c-.176-.416-.264-.9-.264-1.452 0-.312.052-.622.156-.93.104-.308.274-.602.51-.882s.542-.544.918-.792a5.965 5.965 0 0 1 1.386-.648 11.975 11.975 0 0 1 1.914-.45c.728-.116 1.56-.186 2.496-.21v-.72c0-.824-.176-1.434-.528-1.83-.352-.396-.86-.594-1.524-.594-.48 0-.878.056-1.194.168a4.914 4.914 0 0 0-.834.378c-.24.14-.458.266-.654.378a1.295 1.295 0 0 1-.654.168.855.855 0 0 1-.528-.162 1.354 1.354 0 0 1-.348-.378l-.528-.948zm20.196 1.428c-.336-.408-.702-.696-1.098-.864a3.238 3.238 0 0 0-1.278-.252c-.448 0-.852.084-1.212.252a2.44 2.44 0 0 0-.924.762c-.256.34-.452.772-.588 1.296-.136.524-.204 1.142-.204 1.854 0 .72.058 1.33.174 1.83.116.5.282.908.498 1.224.216.316.48.544.792.684.312.14.66.21 1.044.21.616 0 1.14-.128 1.572-.384.432-.256.84-.62 1.224-1.092v-5.52zm2.964-8.664V31h-1.812c-.392 0-.64-.18-.744-.54l-.252-1.188a6.214 6.214 0 0 1-1.71 1.38c-.644.352-1.394.528-2.25.528-.672 0-1.288-.14-1.848-.42a4.117 4.117 0 0 1-1.446-1.218c-.404-.532-.716-1.19-.936-1.974-.22-.784-.33-1.68-.33-2.688 0-.912.124-1.76.372-2.544a6.19 6.19 0 0 1 1.068-2.04 4.984 4.984 0 0 1 1.668-1.35c.648-.324 1.376-.486 2.184-.486.688 0 1.276.108 1.764.324a4.52 4.52 0 0 1 1.308.876v-6.492h2.964zm5.928 0V31h-2.964V13.168h2.964zm10.896 10.26c0-.384-.054-.746-.162-1.086a2.581 2.581 0 0 0-.486-.894 2.26 2.26 0 0 0-.822-.606 2.821 2.821 0 0 0-1.158-.222c-.856 0-1.53.244-2.022.732-.492.488-.806 1.18-.942 2.076h5.592zm-5.652 1.788c.048.632.16 1.178.336 1.638.176.46.408.84.696 1.14.288.3.63.524 1.026.672.396.148.834.222 1.314.222.48 0 .894-.056 1.242-.168.348-.112.652-.236.912-.372s.488-.26.684-.372c.196-.112.386-.168.57-.168.248 0 .432.092.552.276l.852 1.08a4.94 4.94 0 0 1-1.104.966c-.408.26-.834.468-1.278.624a6.985 6.985 0 0 1-1.356.33 9.71 9.71 0 0 1-1.338.096 6.577 6.577 0 0 1-2.388-.426 5.346 5.346 0 0 1-1.92-1.26c-.544-.556-.972-1.244-1.284-2.064-.312-.82-.468-1.77-.468-2.85 0-.84.136-1.63.408-2.37a5.699 5.699 0 0 1 1.17-1.932 5.508 5.508 0 0 1 1.86-1.302c.732-.32 1.558-.48 2.478-.48.776 0 1.492.124 2.148.372a4.68 4.68 0 0 1 1.692 1.086 5.03 5.03 0 0 1 1.11 1.752c.268.692.402 1.482.402 2.37 0 .448-.048.75-.144.906-.096.156-.28.234-.552.234h-7.62zm23.22 4.8c1.488 0 2.614-.322 3.378-.966.764-.644 1.146-1.55 1.146-2.718a3.32 3.32 0 0 0-.306-1.446 3.02 3.02 0 0 0-.882-1.092c-.384-.3-.856-.53-1.416-.69-.56-.16-1.196-.24-1.908-.24h-4.272v7.152h4.26zm-4.26-15.024v6.972h3.672c.784 0 1.454-.1 2.01-.3.556-.2 1.012-.464 1.368-.792.356-.328.618-.7.786-1.116a3.4 3.4 0 0 0 .252-1.284c0-1.144-.362-2.01-1.086-2.598-.724-.588-1.842-.882-3.354-.882h-3.648zm3.648-.972c.968 0 1.808.096 2.52.288.712.192 1.3.474 1.764.846.464.372.808.826 1.032 1.362.224.536.336 1.144.336 1.824 0 .448-.078.88-.234 1.296-.156.416-.38.8-.672 1.152a4.261 4.261 0 0 1-1.08.918c-.428.26-.918.458-1.47.594 1.336.192 2.362.634 3.078 1.326.716.692 1.074 1.602 1.074 2.73 0 .72-.128 1.368-.384 1.944a3.934 3.934 0 0 1-1.116 1.464c-.488.4-1.088.706-1.8.918-.712.212-1.52.318-2.424.318h-5.508V14.02h4.884zm18.72 5.04V31h-.636c-.2 0-.316-.104-.348-.312l-.108-1.776a6.768 6.768 0 0 1-1.914 1.656c-.724.416-1.53.624-2.418.624-.664 0-1.244-.104-1.74-.312a3.193 3.193 0 0 1-1.236-.9 3.984 3.984 0 0 1-.744-1.416c-.168-.552-.252-1.176-.252-1.872V19.06h1.152v7.632c0 1.12.256 1.998.768 2.634.512.636 1.292.954 2.34.954.776 0 1.502-.198 2.178-.594.676-.396 1.278-.946 1.806-1.65V19.06h1.152zm5.196 0V31h-1.14V19.06h1.14zm.492-4.116a.91.91 0 0 1-.09.402c-.06.124-.138.234-.234.33a1.086 1.086 0 0 1-.336.228 1.007 1.007 0 0 1-.408.084c-.144 0-.28-.028-.408-.084a1.086 1.086 0 0 1-.564-.558.965.965 0 0 1-.084-.402 1.067 1.067 0 0 1 .648-.984c.128-.056.264-.084.408-.084.144 0 .28.028.408.084a1.086 1.086 0 0 1 .57.57c.06.132.09.27.09.414zm4.836-1.404V31h-1.152V13.54h1.152zm12.192 8.088c-.456-.688-.962-1.172-1.518-1.452s-1.19-.42-1.902-.42c-.704 0-1.32.128-1.848.384s-.97.618-1.326 1.086c-.356.468-.624 1.028-.804 1.68a8.08 8.08 0 0 0-.27 2.154c0 1.776.326 3.082.978 3.918.652.836 1.594 1.254 2.826 1.254.784 0 1.5-.204 2.148-.612.648-.408 1.22-.98 1.716-1.716v-6.276zm1.14-8.088V31h-.624c-.208 0-.328-.104-.36-.312l-.12-1.884a6.357 6.357 0 0 1-1.848 1.716c-.704.424-1.496.636-2.376.636-1.472 0-2.616-.508-3.432-1.524-.816-1.016-1.224-2.54-1.224-4.572 0-.872.114-1.686.342-2.442a5.86 5.86 0 0 1 1.002-1.968c.44-.556.982-.994 1.626-1.314.644-.32 1.386-.48 2.226-.48.808 0 1.508.148 2.1.444.592.296 1.108.736 1.548 1.32v-7.08h1.14zm21.312 1.524h-5.964V31h-1.236V15.064h-6V14.02h13.2v1.044zm4.056 3.804c.856 0 1.622.146 2.298.438a4.684 4.684 0 0 1 1.71 1.242c.464.536.818 1.182 1.062 1.938.244.756.366 1.602.366 2.538 0 .936-.122 1.78-.366 2.532s-.598 1.396-1.062 1.932a4.624 4.624 0 0 1-1.71 1.236c-.676.288-1.442.432-2.298.432-.856 0-1.622-.144-2.298-.432a4.678 4.678 0 0 1-1.716-1.236c-.468-.536-.824-1.18-1.068-1.932-.244-.752-.366-1.596-.366-2.532 0-.936.122-1.782.366-2.538.244-.756.6-1.402 1.068-1.938a4.74 4.74 0 0 1 1.716-1.242c.676-.292 1.442-.438 2.298-.438zm0 11.388c.712 0 1.334-.122 1.866-.366a3.533 3.533 0 0 0 1.332-1.05c.356-.456.622-1.006.798-1.65.176-.644.264-1.366.264-2.166 0-.792-.088-1.512-.264-2.16-.176-.648-.442-1.202-.798-1.662-.356-.46-.8-.814-1.332-1.062-.532-.248-1.154-.372-1.866-.372-.712 0-1.334.124-1.866.372a3.563 3.563 0 0 0-1.332 1.062c-.356.46-.624 1.014-.804 1.662a8.062 8.062 0 0 0-.27 2.16c0 .8.09 1.522.27 2.166.18.644.448 1.194.804 1.65.356.456.8.806 1.332 1.05s1.154.366 1.866.366zm13.392-11.388c.856 0 1.622.146 2.298.438a4.684 4.684 0 0 1 1.71 1.242c.464.536.818 1.182 1.062 1.938.244.756.366 1.602.366 2.538 0 .936-.122 1.78-.366 2.532s-.598 1.396-1.062 1.932a4.624 4.624 0 0 1-1.71 1.236c-.676.288-1.442.432-2.298.432-.856 0-1.622-.144-2.298-.432a4.678 4.678 0 0 1-1.716-1.236c-.468-.536-.824-1.18-1.068-1.932-.244-.752-.366-1.596-.366-2.532 0-.936.122-1.782.366-2.538.244-.756.6-1.402 1.068-1.938a4.74 4.74 0 0 1 1.716-1.242c.676-.292 1.442-.438 2.298-.438zm0 11.388c.712 0 1.334-.122 1.866-.366a3.533 3.533 0 0 0 1.332-1.05c.356-.456.622-1.006.798-1.65.176-.644.264-1.366.264-2.166 0-.792-.088-1.512-.264-2.16-.176-.648-.442-1.202-.798-1.662-.356-.46-.8-.814-1.332-1.062-.532-.248-1.154-.372-1.866-.372-.712 0-1.334.124-1.866.372a3.563 3.563 0 0 0-1.332 1.062c-.356.46-.624 1.014-.804 1.662a8.062 8.062 0 0 0-.27 2.16c0 .8.09 1.522.27 2.166.18.644.448 1.194.804 1.65.356.456.8.806 1.332 1.05s1.154.366 1.866.366zm9.924-16.716V31h-1.152V13.54h1.152z" fill="#02303A" /></g></svg></a>
+<button type="button" class="site-header__navigation-button hamburger">
+<span class="hamburger__bar"></span>
+<span class="hamburger__bar"></span>
+<span class="hamburger__bar"></span>
+</button>
+</div>
+<div class="site-header__navigation-collapsible
+                      site-header__navigation-collapsible--collapse">
+<ul class="site-header__navigation-items">
+<li class="site-header__navigation-item" itemprop="name">
+<a class="site-header__navigation-link " href="https://docs.gradle.org" itemprop="url">Docs</a>
+</li>
+<li class="site-header__navigation-item site-header__navigation-submenu-section" tabindex="0">
+<span class="site-header__navigation-link ">
+About
+<img class="site-header__down-arrow site-header__icon-light" src="/images/collapse-light.svg" alt="">
+</span>
+<div class="site-header__navigation-submenu">
+<div class="site-header__navigation-submenu-item" itemprop="name">
+<a class="site-header__navigation-submenu-item-link" href="/features" itemprop="url">
+<span class="site-header__navigation-submenu-item-link-text">Gradle Features</span>
+</a>
+</div>
+<div class="site-header__navigation-submenu-item" itemprop="name">
+<a class="site-header__navigation-submenu-item-link" href="https://plugins.gradle.org" itemprop="url">
+<span class="site-header__navigation-submenu-item-link-text">Community Plugins</span>
+</a>
+</div>
+<div class="site-header__navigation-submenu-item" itemprop="name">
+<a class="site-header__navigation-submenu-item-link" href="/kotlin" itemprop="url">
+<span class="site-header__navigation-submenu-item-link-text">Gradle and Kotlin</span>
+</a>
+</div>
+<div class="site-header__navigation-submenu-item" itemprop="name">
+<a class="site-header__navigation-submenu-item-link" href="/maven-vs-gradle" itemprop="url">
+<span class="site-header__navigation-submenu-item-link-text">Maven vs Gradle</span>
+</a>
+</div>
+<div class="site-header__navigation-submenu-item" itemprop="name">
+<a class="site-header__navigation-submenu-item-link" href="/resources" itemprop="url">
+<span class="site-header__navigation-submenu-item-link-text">More Resources</span>
+</a>
+ </div>
+</div>
+</li>
+<li class="site-header__navigation-item" itemprop="name">
+<a class="site-header__navigation-link " href="/training" itemprop="url">Training</a>
+</li>
+<li class="site-header__navigation-item site-header__navigation-submenu-section" tabindex="0">
+<span class="site-header__navigation-link">
+News
+<img class="site-header__down-arrow site-header__icon-light" src="/images/collapse-light.svg" alt="">
+</span>
+<div class="site-header__navigation-submenu">
+<div class="site-header__navigation-submenu-item" itemprop="name">
+<a class="site-header__navigation-submenu-item-link" href="https://newsletter.gradle.com" itemprop="url">
+<span class="site-header__navigation-submenu-item-link-text">Newsletter</span>
+</a>
+</div>
+<div class="site-header__navigation-submenu-item" itemprop="name">
+<a class="site-header__navigation-submenu-item-link" href="https://blog.gradle.org" itemprop="url">
+<span class="site-header__navigation-submenu-item-link-text">Blog</span>
+</a>
+</div>
+<div class="site-header__navigation-submenu-item">
+<a class="site-header__navigation-submenu-item-link" href="https://twitter.com/gradle">
+<span class="site-header__navigation-submenu-item-link-text">Twitter</span>
+</a>
+</div>
+</div>
+</li>
+<li class="site-header__navigation-item" itemprop="name">
+<a class="site-header__navigation-link " href="/services" itemprop="url">Services</a>
+</li>
+<li class="site-header__navigation-item" itemprop="name">
+<a class="site-header__navigation-link" href="https://gradle.com" itemprop="url">Gradle Enterprise</a>
+</li>
+<li class="site-header__navigation-item">
+<a class="site-header__navigation-link" title="Gradle on GitHub" href="https://github.com/gradle/gradle"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>github</title><path d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0 1 10 4.836c.85.004 1.705.114 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C17.137 18.163 20 14.418 20 10c0-5.523-4.478-10-10-10" fill="#02303A" fill-rule="evenodd" /></svg></a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="site-layout__body">
+<div class="layout">
+<main class="layout__main">
+<section id="introduction" class="u-text-center">
+<div class="section-content">
+<div class="introduction-wrapper">
+<div class="header">
+<picture>
+<source media="(max-width: 450px)" srcset="/images/homepage/gradle-org-hero-small.png,
+                            /images/homepage/gradle-org-hero-small@2x.png 2x">
+<source media="(min-width: 451px)" srcset="/images/homepage/gradle-org-hero.png,
+                            /images/homepage/gradle-org-hero@2x.png 2x">
+<img src="/images/homepage/gradle-org-hero.png" srcset="/images/homepage/gradle-org-hero@2x.png 2x" alt="">
+ </picture>
+<h1>
+Accelerate developer productivity
+</h1>
+<p>
+From mobile apps to microservices, from small startups to big enterprises, Gradle helps teams build, automate and deliver better software, faster.
+</p>
+</div>
+<div class="call-to-action">
+<a class="call-to-action__button button button--blue" href="/install">1. Install Gradle</a>
+<div class="call-to-action__arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><title>Arrow</title><path d="M15.6751675 8L0 8M7 16.0100098L16.0965965 8.00500488 7 0" transform="translate(1 1)" stroke="#01303B" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+<a class="call-to-action__button button button--transparent-blue" href="/guides#getting-started">2. Get Started Guides</a>
+<div class="call-to-action__arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><title>Arrow</title><path d="M15.6751675 8L0 8M7 16.0100098L16.0965965 8.00500488 7 0" transform="translate(1 1)" stroke="#01303B" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+<a class="call-to-action__button button button--transparent-blue" href="/training">3. Free Training</a>
+</div>
+</div>
+</div>
+</section>
+<section id="why-gradle" class="u-text-center">
+<div class="section-content">
+<div class="header" style="padding-top: 20px;">
+</div>
+<div class="reasons wrapper">
+<div class="reason">
+<h3>
+Build Anything
+</h3>
+<img src="/images/homepage/build-anything.png" srcset="/images/homepage/build-anything.png 1x, /images/homepage/build-anything@2x.png 2x" alt="">
+<p>
+Write in Java, C++, Python or your language of choice. Package for deployment on any platform. Go monorepo or multi-repo. And rely on Gradle's unparalleled versatility to build it all.
+</p>
+</div>
+<div class="reason">
+<h3>
+Automate Everything
+</h3>
+<img src="/images/homepage/automate-everything.png" srcset="/images/homepage/automate-everything.png 1x, /images/homepage/automate-everything@2x.png 2x" alt="">
+<p>
+Use Gradle's rich API and mature ecosystem of plugins and integrations to get ambitious about automation. Model, integrate and systematize the delivery of your software from end to end.
+</p>
+</div>
+<div class="reason">
+<h3>
+Deliver Faster
+</h3>
+<img src="/images/homepage/deliver-faster.png" srcset="/images/homepage/deliver-faster.png 1x, /images/homepage/deliver-faster@2x.png 2x" alt="">
+<p>
+Scale out development with elegant, blazing-fast builds. From compile avoidance to advanced caching and beyond, we pursue performance relentlessly so your team can deliver continuously.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="users" class="u-text-center grayed">
+<div class="section-content">
+<div class="header">
+<h2>
+Trusted by millions of developers
+</h2>
+<h4>
+Gradle has been counted in the <a href="https://techcrunch.com/2017/04/07/tracking-the-explosive-growth-of-open-source-software/" title="Battery open-source index ranking">top 20 open-source projects</a> and is trusted by millions of developers to build software for billions of people.
+</h4>
+</div>
+<div class="users-wrapper wrapper">
+<div class="user">
+<img src="/images/homepage/linkedin.svg" alt="LinkedIn">
+<img src="/images/homepage/linkedin-blue.svg" alt="">
+</div>
+<div class="user">
+<img src="/images/homepage/android.svg" alt="Android">
+<img src="/images/homepage/android-blue.svg" alt="">
+</div>
+<div class="user">
+<img src="/images/homepage/netflix.svg" alt="Netflix">
+<img src="/images/homepage/netflix-blue.svg" alt="">
+</div>
+<div class="user">
+<img src="/images/homepage/adobe.svg" alt="Adobe">
+<img src="/images/homepage/adobe-blue.svg" alt="">
+</div>
+<div class="user">
+<img src="/images/homepage/elastic.svg" alt="Elastic">
+<img src="/images/homepage/elastic-blue.svg" alt="">
+</div>
+</div>
+<div class="achievements-wrapper">
+<div class="achievement">
+<div class="achievement__icon"><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><title>downloads</title><g stroke="#607E84" stroke-width=".6" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M11.8181818,8.22412468 C11.7484099,7.38518795 11.8080805,6.54149034 11.9954545,5.71762233 L14.0459091,5.71762233 C14.2332831,6.54149034 14.2929537,7.38518795 14.2231818,8.22412468 L16.1731818,8.86957593 C16.7110858,8.18569497 17.3515468,7.57374615 18.0759091,7.05155491 L19.6477273,8.25101848 C19.2085513,8.99142402 18.6575912,9.67217724 18.0109091,10.2734324 L19.045,11.8870605 C19.940112,11.6777695 20.8630155,11.5836232 21.7868182,11.607365 L22.1413636,13.4469011 C21.2818721,13.7572164 20.3788501,13.9563739 19.4586364,14.0385647 L19.0981818,15.8996158 C19.9321467,16.2639268 20.7058879,16.7328561 21.3968182,17.2927148 L20.3745455,18.9063429 C19.4981928,18.6418862 18.6668001,18.2671188 17.9045455,17.7929395 L16.315,19.0085393 C16.6953177,19.7749454 16.9558772,20.5860469 17.0890909,21.418224 L15.145,22.0529177 C14.6603593,21.3362885 14.2884107,20.5613869 14.04,19.7508083 L11.9659091,19.7508083 C11.715644,20.5616726 11.3417001,21.3365873 10.855,22.0529177 L8.92863636,21.4128452 C9.0618501,20.5806681 9.32240962,19.7695667 9.70272727,19.0031606 L8.11318182,17.7875607 C7.35092715,18.26174 6.51953444,18.6365074 5.64318182,18.9009641 L4.62090909,17.287336 C5.31183934,16.7274774 6.08558056,16.258548 6.91954545,15.894237 L6.55909091,14.0331859 C5.64116891,13.9522261 4.74018154,13.7548891 3.88227273,13.4469011 L4.23681818,11.607365 C5.1606209,11.5836232 6.08352433,11.6777695 6.97863636,11.8870605 L8.01272727,10.2734324 C7.36604514,9.67217724 6.81508511,8.99142402 6.37590909,8.25101848 L7.94772727,7.05155491 C8.67208952,7.57374615 9.3125506,8.18569497 9.85045455,8.86957593 L11.8181818,8.22412468 Z M10.7309091,13.9847771 C10.7309091,15.1254903 11.7468157,16.0502211 13,16.0502211 C14.2531843,16.0502211 15.2690909,15.1254903 15.2690909,13.9847771 C15.2690909,12.8440639 14.2531843,11.9193331 13,11.9193331 C11.7468157,11.9193331 10.7309091,12.8440639 10.7309091,13.9847771 L10.7309091,13.9847771 Z" transform="translate(1)" /><path d="M13 0.376513229L0.0709090909 7.18064516 0.0709090909 20.788909 13 27.593041 25.9290909 20.788909 25.9290909 7.18064516z" transform="translate(1)" /><path d="M.0709090909 7.18064516L13 13.9847771 13 27.593041M25.9290909 7.18064516L13 13.9847771" transform="translate(1)" /></g></svg></div>
+<div>4+Million Downloads/Month</div>
+</div>
+<div class="achievement">
+<div class="achievement__icon"><svg width="25" height="30" viewBox="0 0 25 30" xmlns="http://www.w3.org/2000/svg"><title>top-20</title><g stroke="#607E84" stroke-width=".6" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M18.1466276,21.5384615 C18.1466276,17.9700769 15.2789267,15.0769231 11.7419355,15.0769231 C8.20494428,15.0769231 5.3372434,17.9700769 5.3372434,21.5384615 C5.3372434,25.1068462 8.20494428,28 11.7419355,28 C15.2789267,28 18.1466276,25.1068462 18.1466276,21.5384615 L18.1466276,21.5384615 Z" transform="translate(1 1)" /><path d="M10.73341,15.1571538 L0.680178299,5.22146154 C0.137380645,4.67384615 0.000213489736,3.98192308 0.000213489736,3.23076923 C0.000213489736,1.44630769 1.43379707,0 3.20255953,0 L20.2817384,0 C22.0499672,0 23.4840845,1.44630769 23.4840845,3.23076923 C23.4840845,3.98192308 23.3463836,4.67384615 22.8035859,5.22146154 L12.750888,15.1566154" transform="translate(1 1)" /><path d="M16.8173337 17.5994538L22.8035859 11.6828385C23.3463836 11.1357615 23.4840845 10.4433 23.4840845 9.69214615L23.4840845 3.23060769M2.12545044 6.64876154C2.4622305 6.52760769 2.82462933 6.46137692 3.20250616 6.46137692L20.281685 6.46137692C20.6595619 6.46137692 21.0224944 6.52760769 21.3598082 6.6493M6.66424223 17.5971923L.680124927 11.6832692C.137327273 11.1356538.000160117302 10.4431923.000160117302 9.69203846L.000160117302 3.2305M11.7419355 17.2307692L12.8963812 19.7125385 15.4780059 20.1104615 13.6099707 22.0419231 14.050827 24.7692308 11.7419355 23.4817692 9.43304399 24.7692308 9.87390029 22.0419231 8.0058651 20.1104615 10.5874897 19.7125385z" transform="translate(1 1)" /></g></svg></div>
+<div>Top 20 Open-Source projects</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ide-integration" class="u-text-center">
+<div class="section-content">
+<div class="header">
+<h2>
+Stay in Flow
+</h2>
+<h4>
+Enjoy first-class Gradle support in your IDE of choice.
+</h4>
+</div>
+<div class="ides">
+<a class="ide" href="https://developer.android.com/studio/build/index.html">
+<div class="ide-images-wrapper">
+<img src="/images/homepage/android-studio.svg" alt="Android Studio">
+<img src="/images/homepage/android-studio-blue.svg" alt="">
+</div>
+</a>
+<a class="ide" href="http://www.vogella.com/tutorials/EclipseGradle/article.html">
+<div class="ide-images-wrapper">
+<img src="/images/homepage/eclipse.svg" alt="Eclipse Buildship">
+<img src="/images/homepage/eclipse-blue.svg" alt="">
+</div>
+</a>
+<a class="ide" href="https://www.jetbrains.com/help/idea/gradle.html">
+<div class="ide-images-wrapper">
+<img src="/images/homepage/idea.svg" alt="IntelliJ IDEA">
+<img src="/images/homepage/idea-blue.svg" alt="">
+</div>
+</a>
+<a class="ide" href="http://plugins.netbeans.org/plugin/44510/gradle-support">
+<div class="ide-images-wrapper">
+<img src="/images/homepage/netbeans.svg" alt="Netbeans">
+<img src="/images/homepage/netbeans-blue.svg" alt="">
+</div>
+</a>
+</div>
+</div>
+</section>
+<section id="maven-vs-gradle" class="u-text-center grayed">
+<div class="section-content">
+<div class="header">
+<h2>
+Make the Move
+</h2>
+<h4>
+Considering migrating from Maven? We've got resources to help.
+</h4>
+</div>
+<div class="cta">
+<a class="button button--transparent-new-blue" href="/migrating-from-maven">Migrate from Maven</a>
+<a class="button button--new-blue" href="/maven-vs-gradle">Compare with Maven</a>
+</div>
+</div>
+</section>
+<section id="testimonials" class="u-text-center">
+<div class="section-content">
+<div class="header">
+<h2>
+Hear from Users
+</h2>
+</div>
+<div class="testimonials-wrapper">
+<div class="testimonial">
+<div class="pic">
+<img src="/images/homepage/justinryan.jpg" alt="">
+</div>
+<div class="testimonial-content">
+<blockquote>We do truly feel that Gradle is the best build system for the JVM…</blockquote>
+<span class="author"><em>– Justin Ryan, Senior Software Engineer at Netflix</em></span>
+</div>
+</div>
+<div class="testimonial">
+<div class="pic">
+<img src="/images/homepage/jenspillgramlarsen.jpg" alt="">
+</div>
+<div class="testimonial-content">
+<blockquote>At LinkedIn we want to radically change the definition and eliminate these deficiencies in the system both when it comes to releasing software and developing software every day. There is a lot of buzz around continuous delivery and deployment and I think Gradle is instrumental on the development side, on the micro level, and the day-to-day on how we can eliminate the deficiencies in the system.</blockquote>
+<span class="author"><em>– Jens Pillgram-Larsen, Senior Engineering Manager at LinkedIn</em></span>
+</div>
+</div>
+<div class="testimonial">
+<div class="pic">
+<img src="/images/homepage/martincron.jpg" alt="">
+</div>
+<div class="testimonial-content">
+<blockquote>Keep up the great work. Gradle is one of my very favorite tools, and finding a developer who doesn't yet use Gradle is like finding a movie fan who hasn't yet seen <em>The Godfather</em>&mdash;"Oh my God! Stop everything and watch this!"</blockquote>
+<span class="author"><em>– Martin Cron, Lead Developer at Wisercare</em></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="newsletter" class="u-text-center grayed">
+<div class="section-content">
+<div class="header">
+<h2>
+Stay in the Know
+</h2>
+</div>
+<h4>
+Join 80,000+ monthly <a href="https://newsletter.gradle.com">Gradle newsletter</a> subscribers.
+</h4>
+<p class='disclaimer'>
+By entering your email, you agree to our <a href="https://gradle.com/legal/terms-of-service/">Terms</a> and <a href="https://gradle.com/legal/privacy/">Privacy Policy</a>, including receipt of emails. You can unsubscribe at any time.
+</p>
+<iframe id="newsletter-form-frame" src="https://go.gradle.com/l/68052/2018-03-20/bf1bvt" style="display: block; width: 100%; border: 0;"></iframe>
+<script>
+      if (ga) {
+        ga(function() {
+          var trackers = ga.getAll();
+          trackers.forEach(function(tracker) {
+            var clientId = tracker.get('clientId');
+            var frame = document.getElementById('newsletter-form-frame');
+            frame.onload = function() {
+              frame.contentWindow.postMessage(clientId, "https://go.gradle.com/l/68052/2018-03-20/bf1bvt");
+            }
+          });
+        });
+      }
+    </script>
+<script>
+      var iframe = document.querySelector("iframe");
+      // Append query params for automated Pardot source tracking
+      if (window && window.location && window.location.search) {
+        iframe.src += window.location.search;
+      }
+      window.addEventListener("message", function(e) {
+        if (isNaN(e.data)) {
+          return;
+        }
+        iframe.style.height = e.data + "px";
+      });
+      /*
+       * Replace the iframe with an error message if for any reason the URL of the Pardot form
+       * is blocked. For example, Firefox blocks this URL in a Private Window when "Tracking
+       * Protection in Private Windows" is enabled.
+       */
+      fetch(iframe.src, {
+        method: "get",
+        mode: "no-cors"
+      }).catch(function() {
+        var newsletterSection = document.getElementById("newsletter");
+        newsletterSection.parentElement.removeChild(newsletterSection);
+        track('Error', 'Logged', 'Pardot Newsletter iFrame');
+      });
+    </script>
+</div>
+</section>
+</main>
+</div>
+</div>
+<footer class="site-layout__footer site-footer" itemscope itemtype="https://schema.org/WPFooter">
+<div class="site-footer__contents">
+<div class="site-footer__copy">&copy;
+Gradle Inc. <time datetime="2018-10-11T21:12:33+00:00">2018</time>
+</div>
+<div class="site-footer__logo"><a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" class="logo-icon"><g fill="#11272E" opacity=".7"><path d="M37.7 7.1C36.4 4.8 34 4 32.4 4c-2 0-3.7 1.1-3.4 1.9.1.1.5.9.7 1.3.3.5.9.1 1.2 0 .6-.3 1.3-.5 2-.4.7.1 1.7.6 2.4 1.8 1.5 3-3.2 9.2-9.1 4.9-5.9-4.2-11.7-2.8-14.3-2-2.6.9-3.8 1.8-2.7 3.8 1.4 2.7.9 1.8 2.3 4.1 2.1 3.5 6.8-1.7 6.8-1.7-3.5 5.3-6.5 4-7.7 2.2-1-1.7-1.8-3.6-1.8-3.6-8.9 3.2-6.5 17.3-6.5 17.3h4.4c1.2-5.2 5.2-5 5.9 0h3.3c3-10.1 10.5 0 10.5 0h4.4c-1.2-6.9 2.5-9.1 4.8-13.1 2.3-4.1 4.5-9 2.1-13.4zM26.3 20.5c-2.3-.8-1.4-3.2-1.4-3.2s2 .7 4.7 1.6c-.1.7-1.5 2.1-3.3 1.6z" /><path d="M28.4 18.7c.1.6-.4 1.2-1.1 1.3-.7.1-1.3-.4-1.3-1.1-.1-.6.4-1.2 1.1-1.3.6 0 1.2.4 1.3 1.1" /><path d="M37.7 7.1C36.4 4.8 34 4 32.4 4c-2 0-3.7 1.1-3.4 1.9.1.1.5.9.7 1.3.3.5.9.1 1.2 0 .6-.3 1.3-.5 2-.4.7.1 1.7.6 2.4 1.8 1.5 3-3.2 9.2-9.1 4.9-5.9-4.2-11.7-2.8-14.3-2-2.6.9-3.8 1.8-2.7 3.8 1.4 2.7.9 1.8 2.3 4.1 2.1 3.5 6.8-1.7 6.8-1.7-3.5 5.3-6.5 4-7.7 2.2-1-1.7-1.8-3.6-1.8-3.6-8.9 3.2-6.5 17.3-6.5 17.3h4.4c1.2-5.2 5.2-5 5.9 0h3.3c3-10.1 10.5 0 10.5 0h4.4c-1.2-6.9 2.5-9.1 4.8-13.1 2.3-4.1 4.5-9 2.1-13.4zM26.3 20.5c-2.3-.8-1.4-3.2-1.4-3.2s2 .7 4.7 1.6c-.1.7-1.5 2.1-3.3 1.6z" /><path d="M28.4 18.7c.1.6-.4 1.2-1.1 1.3-.7.1-1.3-.4-1.3-1.1-.1-.6.4-1.2 1.1-1.3.6 0 1.2.4 1.3 1.1" /></g></svg></a></div>
+<div class="site-footer__links">
+<a href="https://gradle.com/careers">Careers</a> |
+<a href="https://gradle.com/legal/privacy/">Privacy</a> |
+<a href="https://gradle.com/legal/terms-of-service/">Terms of Service</a> |
+<a href="/contact">Contact</a>
+</div>
+</div>
+</footer>
+<script src="/js/site-header.js"></script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Gradle",
+      "url": "https://gradle.org",
+      "logo": "https://gradle.org/images/gradle-knowledge-graph-logo.png?20170228",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+1-415-446-9553",
+        "contactType": "sales",
+        "areaServed": ["US"]
+      }],
+      "sameAs": [
+        "https://www.wikidata.org/entity/Q965596",
+        "https://twitter.com/gradle",
+        "https://www.linkedin.com/company/gradleware",
+        "https://www.youtube.com/channel/UCvClhveoEjokKIuBAsSjEwQ"
+      ]
+    }
+    </script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "Gradle",
+      "url": "https://gradle.org"
+    }
+    </script>
+<script>
+      piAId = "69052";
+      piCId = "2332";
+
+      (function() {
+        function async_load(){
+          var s = document.createElement("script"); s.type = "text/javascript";
+          s.src = ("https:" == document.location.protocol ? "https://pi" : "http://cdn") + ".pardot.com/pd.js";
+          var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(s, c);
+        }
+        if(window.attachEvent) { window.attachEvent("onload", async_load); }
+        else { window.addEventListener("load", async_load, false); }
+      })();
+    </script>
+
+<script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    twq('init','nv83n');
+    twq('track','PageView');
+    </script>
+
+</body>
+</html>
