@@ -53,6 +53,12 @@ public class RegisterActivity extends AppCompatActivity {
 
                         firebaseUser=auth.getCurrentUser();
                         User myUserInsertObj = new User(e1.getText().toString(),e2.getText().toString());
+
+                        /*String userId = rootReference.push().getKey();
+
+// creating user object
+                        User myUserInsertObj = new User("Ravi Tamada", "ravi@androidhive.info");*/
+
                         rootReference.child(firebaseUser.getUid()).setValue(myUserInsertObj)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
